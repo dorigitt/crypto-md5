@@ -1,0 +1,126 @@
+{
+  "app": {
+    "title": "CryptoLab",
+    "subtitle": "MD5 · HMAC-MD5 визуализатор"
+  },
+  "nav": {
+    "home": "Главная",
+    "visualizer": "Визуализатор",
+    "education": "Задачи",
+    "about": "О проекте"
+  },
+  "home": {
+    "hero_badge": "Проектная работа · MD5",
+    "hero_title": "Разберите MD5 на части — шаг за шагом",
+    "hero_subtitle": "Интерактивная образовательная платформа для понимания, как работает хеш-функция MD5 и её keyed-вариант HMAC-MD5. Введите свой текст, выберите уровень и смотрите, как биты превращаются в отпечаток.",
+    "cta_visualize": "Запустить визуализатор",
+    "cta_education": "Решать задачи",
+    "features_title": "Что внутри",
+    "feature_1_title": "Пошаговая визуализация",
+    "feature_1_desc": "Каждая из 64 операций внутри блока. Каждый бит padding. Каждый XOR в HMAC. Ничего не спрятано.",
+    "feature_2_title": "Три уровня объяснения",
+    "feature_2_desc": "От общей картины до битовых деталей — выбирайте глубину под себя и переключайтесь на ходу.",
+    "feature_3_title": "Режим с ключом",
+    "feature_3_desc": "Введите ключ — и мы автоматически переключимся в HMAC-MD5. Два прохода MD5, XOR с ipad и opad.",
+    "feature_4_title": "Практика",
+    "feature_4_desc": "Задачи по уровням сложности, оценки, прогресс. Приходят с сервера через типизированное API.",
+    "algo_title": "О MD5",
+    "algo_desc": "MD5 (Message Digest 5) — хеш-функция, разработанная Роном Ривестом в 1991 году. Принимает произвольно длинное сообщение, возвращает 128-битный отпечаток. Сегодня считается криптографически уязвимой (коллизии находятся за секунды), но остаётся отличным учебным примером: в ней собраны все ключевые идеи семейства хешей — padding, 512-битные блоки, Merkle-Damgård, четыре раунда с разными функциями."
+  },
+  "visualizer": {
+    "mode_md5": "MD5",
+    "mode_hmac": "HMAC-MD5",
+    "mode_hint_md5": "Ключ пуст → вычисляем обычный MD5.",
+    "mode_hint_hmac": "Ключ задан → вычисляем keyed-хеш HMAC-MD5.",
+    "input_text_label": "Текст для хеширования",
+    "input_text_placeholder": "Введите любой текст, например: The quick brown fox…",
+    "input_key_label": "Ключ (опционально — включает HMAC-MD5)",
+    "input_key_placeholder": "Оставьте пустым для plain MD5",
+    "level_label": "Уровень объяснения",
+    "level_easy": "Лёгкий",
+    "level_medium": "Средний",
+    "level_hard": "Глубокий",
+    "hash_button": "Хешировать",
+    "reset_button": "Сбросить",
+    "player": {
+      "prev": "Назад",
+      "next": "Вперёд",
+      "play": "Играть",
+      "pause": "Пауза",
+      "speed": "Скорость",
+      "step_of": "Шаг {{current}} из {{total}}"
+    },
+    "stages": {
+      "preprocessing": "Подготовка",
+      "padding": "Дополнение",
+      "blocks": "Блоки",
+      "init": "Инициализация",
+      "rounds": "Раунды",
+      "output": "Результат",
+      "hmac_prep": "Подготовка HMAC",
+      "hmac_combine": "Результат HMAC"
+    },
+    "commentary": {
+      "title": "Что происходит",
+      "why_title": "Почему этот шаг нужен"
+    },
+    "avalanche": {
+      "title": "Лавинный эффект",
+      "desc": "Один флипнутый бит во входе — совершенно другой хеш. Это свойство делает MD5 хеш-функцией.",
+      "original": "Оригинал",
+      "modified": "Бит {{bit}} инвертирован"
+    },
+    "empty_state_title": "Готовы начать?",
+    "empty_state_desc": "Введите текст (и, если хочется, ключ), выберите уровень глубины и нажмите «Хешировать»."
+  },
+  "education": {
+    "title": "Задачи",
+    "subtitle": "Решайте задачи по MD5 и HMAC-MD5, зарабатывайте очки, отслеживайте прогресс.",
+    "filter_all": "Все",
+    "filter_easy": "Лёгкие",
+    "filter_medium": "Средние",
+    "filter_hard": "Сложные",
+    "difficulty_easy": "Лёгкая",
+    "difficulty_medium": "Средняя",
+    "difficulty_hard": "Сложная",
+    "category_padding": "Padding",
+    "category_round_function": "Round-функция",
+    "category_full_hash": "Полный хеш",
+    "category_hmac": "HMAC",
+    "category_collision": "Коллизии",
+    "category_theory": "Теория",
+    "points": "{{n}} очк.",
+    "solved_badge": "Решено",
+    "submit": "Проверить",
+    "submit_again": "Попробовать ещё раз",
+    "hint_button": "Показать подсказку (−{{cost}} очк.)",
+    "correct": "Верно!",
+    "incorrect": "Неверно. Попробуйте ещё раз.",
+    "expected_answer": "Ожидаемый ответ",
+    "metrics": {
+      "title": "Статистика",
+      "total_points": "Очки",
+      "solved": "Решено",
+      "attempts": "Попыток",
+      "by_difficulty": "По сложности"
+    },
+    "task_list_empty": "Задачи загружаются...",
+    "task_detail_empty": "Выберите задачу слева, чтобы начать."
+  },
+  "about": {
+    "title": "О проекте",
+    "goal_title": "Цель",
+    "goal_desc": "Образовательная платформа для изучения криптографических примитивов. Мы выбрали MD5 и HMAC-MD5 как пример хеш-функции семейства Merkle-Damgård.",
+    "stack_title": "Стек",
+    "team_title": "Команда"
+  },
+  "footer": {
+    "built_with": "Собрано на React · Vite · TypeScript · Tailwind · Framer Motion",
+    "source": "Исходники"
+  },
+  "errors": {
+    "invalid_input": "Некорректный ввод",
+    "too_long": "Слишком длинный текст (лимит {{limit}} КБ)",
+    "backend_unavailable": "Бэкенд недоступен — показаны демо-данные"
+  }
+}

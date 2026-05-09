@@ -1,0 +1,126 @@
+{
+  "app": {
+    "title": "CryptoLab",
+    "subtitle": "MD5 · HMAC-MD5 visualizer"
+  },
+  "nav": {
+    "home": "Home",
+    "visualizer": "Visualizer",
+    "education": "Practice",
+    "about": "About"
+  },
+  "home": {
+    "hero_badge": "Final project · MD5",
+    "hero_title": "Deconstruct MD5, step by step",
+    "hero_subtitle": "An interactive educational platform for understanding how the MD5 hash and its keyed cousin HMAC-MD5 work. Type your text, pick a depth, watch bits turn into a fingerprint.",
+    "cta_visualize": "Open visualizer",
+    "cta_education": "Practice tasks",
+    "features_title": "What's inside",
+    "feature_1_title": "Step-by-step visualization",
+    "feature_1_desc": "Every one of the 64 per-block operations. Every padding bit. Every XOR in HMAC. Nothing hidden.",
+    "feature_2_title": "Three explanation depths",
+    "feature_2_desc": "Big picture, per-round, or full bit-level — switch on the fly.",
+    "feature_3_title": "Keyed mode",
+    "feature_3_desc": "Supply a key and we swap to HMAC-MD5 automatically. Two MD5 passes, ipad/opad XOR included.",
+    "feature_4_title": "Practice problems",
+    "feature_4_desc": "Difficulty-graded tasks, scoring, and progress — delivered by a typed backend API.",
+    "algo_title": "About MD5",
+    "algo_desc": "MD5 (Message Digest 5) was designed by Ron Rivest in 1991. It takes an arbitrary-length message and returns a 128-bit fingerprint. It's considered cryptographically broken today (collisions are trivial), but it's an excellent teaching example: every major idea from the hash-function family is here — padding, 512-bit blocks, Merkle-Damgård construction, four rounds with four distinct non-linear functions."
+  },
+  "visualizer": {
+    "mode_md5": "MD5",
+    "mode_hmac": "HMAC-MD5",
+    "mode_hint_md5": "No key → computing plain MD5.",
+    "mode_hint_hmac": "Key provided → computing keyed HMAC-MD5.",
+    "input_text_label": "Text to hash",
+    "input_text_placeholder": "Type anything, e.g. 'The quick brown fox…'",
+    "input_key_label": "Key (optional — enables HMAC-MD5)",
+    "input_key_placeholder": "Leave empty for plain MD5",
+    "level_label": "Explanation depth",
+    "level_easy": "Easy",
+    "level_medium": "Medium",
+    "level_hard": "Deep",
+    "hash_button": "Hash it",
+    "reset_button": "Reset",
+    "player": {
+      "prev": "Previous",
+      "next": "Next",
+      "play": "Play",
+      "pause": "Pause",
+      "speed": "Speed",
+      "step_of": "Step {{current}} of {{total}}"
+    },
+    "stages": {
+      "preprocessing": "Preprocess",
+      "padding": "Padding",
+      "blocks": "Blocks",
+      "init": "Init",
+      "rounds": "Rounds",
+      "output": "Output",
+      "hmac_prep": "HMAC prep",
+      "hmac_combine": "HMAC output"
+    },
+    "commentary": {
+      "title": "What's happening",
+      "why_title": "Why this step"
+    },
+    "avalanche": {
+      "title": "Avalanche effect",
+      "desc": "Flip a single input bit — the hash is completely different. That's what makes a hash a hash.",
+      "original": "Original",
+      "modified": "Bit {{bit}} flipped"
+    },
+    "empty_state_title": "Ready?",
+    "empty_state_desc": "Type some text (and optionally a key), pick a depth, and press Hash."
+  },
+  "education": {
+    "title": "Practice tasks",
+    "subtitle": "Solve MD5 / HMAC-MD5 problems, earn points, track progress.",
+    "filter_all": "All",
+    "filter_easy": "Easy",
+    "filter_medium": "Medium",
+    "filter_hard": "Hard",
+    "difficulty_easy": "Easy",
+    "difficulty_medium": "Medium",
+    "difficulty_hard": "Hard",
+    "category_padding": "Padding",
+    "category_round_function": "Round function",
+    "category_full_hash": "Full hash",
+    "category_hmac": "HMAC",
+    "category_collision": "Collisions",
+    "category_theory": "Theory",
+    "points": "{{n}} pts",
+    "solved_badge": "Solved",
+    "submit": "Submit",
+    "submit_again": "Try again",
+    "hint_button": "Reveal hint (−{{cost}} pts)",
+    "correct": "Correct!",
+    "incorrect": "Not quite — try again.",
+    "expected_answer": "Expected",
+    "metrics": {
+      "title": "Your stats",
+      "total_points": "Points",
+      "solved": "Solved",
+      "attempts": "Attempts",
+      "by_difficulty": "By difficulty"
+    },
+    "task_list_empty": "Loading tasks…",
+    "task_detail_empty": "Pick a task on the left to begin."
+  },
+  "about": {
+    "title": "About",
+    "goal_title": "Goal",
+    "goal_desc": "Educational platform for cryptographic primitives. We picked MD5 + HMAC-MD5 as a representative Merkle-Damgård hash.",
+    "stack_title": "Stack",
+    "team_title": "Team"
+  },
+  "footer": {
+    "built_with": "Built with React · Vite · TypeScript · Tailwind · Framer Motion",
+    "source": "Source"
+  },
+  "errors": {
+    "invalid_input": "Invalid input",
+    "too_long": "Text too long (limit {{limit}} KB)",
+    "backend_unavailable": "Backend unavailable — showing mock data"
+  }
+}
