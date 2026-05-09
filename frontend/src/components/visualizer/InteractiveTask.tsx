@@ -278,7 +278,88 @@ export default function InteractiveTask() {
       setResult('wrong');
     }
   }
+const sideContent = {
+  title: '',
+  text: '',
+  steps: [] as string[],
+};
 
+if (index === 0) {
+  sideContent.title = 'Преобразование в hex';
+  sideContent.text =
+    'На этом этапе MD5 преобразует текст в последовательность байтов. Каждый символ превращается в hex-значение.';
+  sideContent.steps = [
+    'Посмотри на последний символ сообщения.',
+    'Преобразуй символ в ASCII/UTF-8.',
+    'Запиши полученный байт в hex.',
+  ];
+}
+
+if (index === 1) {
+  sideContent.title = 'Padding';
+  sideContent.text =
+    'MD5 добавляет бит 1 и набор нулей, чтобы длина сообщения стала кратной 512 битам.';
+  sideContent.steps = [
+    'К сообщению добавляется бит 1.',
+    'После него идут нули.',
+    'Padding продолжается до 448 бит.',
+  ];
+}
+
+if (index === 2) {
+  sideContent.title = 'Добавление длины';
+  sideContent.text =
+    'Теперь MD5 записывает исходную длину сообщения в последние 64 бита блока в формате little-endian.';
+  sideContent.steps = [
+    'Посчитай длину сообщения в битах.',
+    'Переведи число в hex.',
+    'Запиши байты в little-endian порядке.',
+  ];
+}
+
+if (index === 3) {
+  sideContent.title = 'Разбиение на блоки';
+  sideContent.text =
+    'Подготовленное сообщение делится на 16 слов по 32 бита. Эти слова используются в 64 раундах MD5.';
+  sideContent.steps = [
+    'Найди значение M0.',
+    'Найди значение M1.',
+    'Соотнеси слова с правильными hex-значениями.',
+  ];
+}
+
+if (index === 4) {
+  sideContent.title = 'Инициализация регистров';
+  sideContent.text =
+    'Перед началом раундов MD5 создаёт 4 регистра: A, B, C и D. Они содержат стартовые значения алгоритма.';
+  sideContent.steps = [
+    'Посмотри начальные значения A, B, C, D.',
+    'Запомни их порядок.',
+    'Эти значения будут изменяться в каждом раунде.',
+  ];
+}
+
+if (index === 5) {
+  sideContent.title = '64 раунда MD5';
+  sideContent.text =
+    'В каждом раунде MD5 использует функции F, G, H или I, а также циклические сдвиги и константы.';
+  sideContent.steps = [
+    'Выбирается функция F/G/H/I.',
+    'Используется блок M[g].',
+    'Регистры обновляются после вычислений.',
+  ];
+}
+
+if (index === 6) {
+  sideContent.title = 'Финальный hash';
+  sideContent.text =
+    'После завершения всех раундов значения A, B, C и D объединяются в итоговый 128-битный MD5 hash.';
+  sideContent.steps = [
+    'A, B, C и D объединяются.',
+    'Получается 128-битное значение.',
+    'Hash выводится в hex формате.',
+  ];
+}
   return (
     <div className="rounded-2xl border border-border bg-bg-panel/60 p-4">
       <div className="grid gap-4 md:grid-cols-[1.55fr_minmax(240px,0.85fr)]">
@@ -345,20 +426,19 @@ export default function InteractiveTask() {
         <aside className="rounded-2xl border border-border bg-bg-soft/80 p-4 text-sm text-fg-muted space-y-4">
           <div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-fg-subtle">
-              Что мы сделали
+              {sideContent.title}
             </div>
             <p className="mt-2 text-[13px] leading-6 text-fg">
-              Ранее мы уже преобразовали текст в байты. Теперь осталось найти hex-код последнего символа и ввести его в поле ответа.
+              {sideContent.text}
             </p>
           </div>
 
           <div className="rounded-2xl border border-border bg-bg-panel/70 p-3 text-[13px] text-fg">
             <div className="font-semibold text-fg">Инструкция</div>
             <ol className="mt-3 list-decimal list-inside space-y-2 text-fg-muted">
-              <li>Посмотри на последний символ текста.</li>
-              <li>Переведи этот символ в байт (ASCII/UTF-8).</li>
-              <li>Запиши полученный байт в hex.
-              </li>
+              {sideContent.steps.map((step, i) => (
+                <li key={i}>{step}</li>
+              ))}
             </ol>
           </div>
         </aside>

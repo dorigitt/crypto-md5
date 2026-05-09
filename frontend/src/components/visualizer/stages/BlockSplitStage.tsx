@@ -36,7 +36,10 @@ export default function BlockSplitStage({
               <div className="text-xs font-semibold text-accent-cyan">Блок #{bi + 1}</div>
               <div className="text-[10px] text-fg-subtle font-mono">16 × u32</div>
             </div>
-            <div className="grid grid-cols-4 gap-1 font-mono text-[11px]">
+            <motion.div
+                key={`table-${index}-${bi}`}
+                className="grid grid-cols-4 gap-1 font-mono text-[11px]"
+              >
               {Array.from(block).map((w, i) => {
                 const shouldHide =
                   hideMatchingAnswers &&
@@ -44,19 +47,34 @@ export default function BlockSplitStage({
                   (i === 0 || i === 1 || i === 14);
 
                 return (
-                  <div
-                    key={i}
+                  <motion.div
+                    key={`${index}-${bi}-${i}`}
+                    initial={{ opacity: 0, x: -35, scale: 0.96 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    transition={{
+                      delay: i * 0.22,
+                      duration: 0.55,
+                      ease: 'easeOut',
+                    }}
                     className="px-1.5 py-1 rounded bg-bg-raised border border-border text-center"
                     title={`M[${i}]`}
                   >
                     <span className="text-fg-subtle">M{i}:</span>{' '}
-                    <span className="text-accent-cyan">
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{
+                        delay: i * 0.22 + 0.25,
+                        duration: 0.4,
+                      }}
+                      className="text-accent-cyan"
+                    >
                       {shouldHide ? '????????' : wordToHex(w)}
-                    </span>
-                  </div>
+                    </motion.span>
+                  </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
           </motion.div>
         ))}
         {level === 'easy' && blocks.length > 3 && (

@@ -39,7 +39,9 @@ export default function Commentary() {
                 {content.titleRu}
               </h3>
             </div>
-            <p className="text-[15px] leading-[1.75] text-fg">{content.whatRu}</p>
+            <div className="text-[15px] leading-[1.75] text-fg whitespace-pre-line">
+              {content.whatRu}
+            </div>
           </div>
 
           {content.whyRu && (
